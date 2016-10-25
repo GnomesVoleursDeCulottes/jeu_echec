@@ -5,6 +5,7 @@
  */
 package echec.service;
 
+import echec.entity.Joueur;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
@@ -19,7 +20,7 @@ public interface JoueurServiceCrud extends CrudRepository<Joueur, Long>{
      public Joueur findOneByLogin(String login);
      
       @Override
-    public List<Joueur> findAll();
+      public List<Joueur> findAll();
     
     
     
