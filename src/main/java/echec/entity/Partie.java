@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entity;
+package echec.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,50 +18,47 @@ import javax.persistence.Id;
  * @author Laurent-LIM
  */
 @Entity
-public class Pion implements Serializable {
+public class Partie implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    public enum Couleur{
-        Blanc, Noir
-    }
+    private String etat;
     
-    @Enumerated(EnumType.STRING)
-    private Couleur couleur;
+    private String blanc;
     
-    private String PositionX;
+    private String noir;
     
-    private short PositionY;
+    private List<Pion> pions = new ArrayList<Pion>();
 
-    public Couleur getCouleur() {
-        return couleur;
+    public String getEtat() {
+        return etat;
     }
 
-    public void setCouleur(Couleur couleur) {
-        this.couleur = couleur;
+    public void setEtat(String etat) {
+        this.etat = etat;
     }
 
-    public String getPositionX() {
-        return PositionX;
+    public String getBlanc() {
+        return blanc;
     }
 
-    public void setPositionX(String PositionX) {
-        this.PositionX = PositionX;
+    public void setBlanc(String blanc) {
+        this.blanc = blanc;
     }
 
-    public short getPositionY() {
-        return PositionY;
+    public String getNoir() {
+        return noir;
     }
 
-    public void setPositionY(short PositionY) {
-        this.PositionY = PositionY;
+    public void setNoir(String noir) {
+        this.noir = noir;
     }
+
     
     
-
     public Long getId() {
         return id;
     }
@@ -80,10 +77,10 @@ public class Pion implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Pion)) {
+        if (!(object instanceof Partie)) {
             return false;
         }
-        Pion other = (Pion) object;
+        Partie other = (Partie) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -92,7 +89,7 @@ public class Pion implements Serializable {
 
     @Override
     public String toString() {
-        return "entity.Pion[ id=" + id + " ]";
+        return "entity.Partie[ id=" + id + " ]";
     }
     
 }
