@@ -5,13 +5,14 @@
  */
 package echec.service;
 
+import echec.entity.Pion;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author admin
  */
-public interface pionServiceCrud extends CrudRepository<Pion, Long>{ {
+public interface pionServiceCrud extends CrudRepository<Pion, Long>{ 
     
     
     
