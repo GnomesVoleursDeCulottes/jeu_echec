@@ -4,6 +4,9 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>streaming.entity.Film</class>
     <class>streaming.entity.Genre</class>
+    <class>entity.Joueur</class>
+    <class>entity.Partie</class>
+    <class>entity.Pion</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/gaia"/>
@@ -12,5 +15,5 @@
       <property name="javax.persistence.jdbc.password" value="gaia"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
-  </persistence-unit> 
+  </persistence-unit>
 </persistence>
