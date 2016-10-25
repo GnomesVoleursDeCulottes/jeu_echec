@@ -28,8 +28,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 //@SpringBootApplication
 //@EnableAutoConfiguration
-@ComponentScan(basePackages = "streaming") 
-@EnableJpaRepositories(basePackages = "streaming")
+@ComponentScan(basePackages = "echec") 
+@EnableJpaRepositories(basePackages = "echec")
 @EnableWebMvc
 public class SpringConfig extends WebMvcConfigurerAdapter{
 
@@ -47,7 +47,6 @@ public class SpringConfig extends WebMvcConfigurerAdapter{
     public InternalResourceViewResolver jspViewResolver() {
         InternalResourceViewResolver bean = new InternalResourceViewResolver();
         bean.setPrefix("/WEB-INF/views/");
-        bean.setSuffix(".jsp");
         return bean;
     }
  /*
