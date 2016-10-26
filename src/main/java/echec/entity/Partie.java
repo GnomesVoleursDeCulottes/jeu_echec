@@ -26,7 +26,7 @@ import javax.persistence.OneToMany;
 public class Partie implements Serializable {
 
      public enum Etat{
-        Fini, EnCours, Termine
+        Fini, EnCours, Creer
     }
     
     private static final long serialVersionUID = 1L;
