@@ -9,9 +9,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -20,61 +25,55 @@ import javax.persistence.Id;
 @Entity
 public class Partie implements Serializable {
 
+     public enum Etat{
+        Fini, EnCours, Termine
+    }
+    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
     private String nomPartie;
-    
-    private String etat;
+    @Enumerated(EnumType.STRING)
+    private Etat etat;
 
-    private String blanc;
+    @ManyToOne
+    @JoinColumn(name = "ID_JOUEUR_BLANC")
+    private Joueur blanc;
     
-    private String noir;
+    @ManyToOne
+    @JoinColumn(name = "ID_JOUEUR_NOIR")
+    private Joueur noir;
     
+    
+    @OneToMany(mappedBy = "partie")
     private List<Pion> pions = new ArrayList<Pion>();
 
-    public String getEtat() {
+    public Etat getEtat() {
         return etat;
     }
 
-    public void setEtat(String etat) {
+    public void setEtat(Etat etat) {
         this.etat = etat;
     }
 
-    public String getBlanc() {
+    public Joueur getBlanc() {
         return blanc;
     }
 
-    public void setBlanc(String blanc) {
+    public void setBlanc(Joueur blanc) {
         this.blanc = blanc;
     }
 
-    public String getNoir() {
+    public Joueur getNoir() {
         return noir;
     }
 
-    public void setNoir(String noir) {
+    public void setNoir(Joueur noir) {
         this.noir = noir;
     }
 
-    public String getNomPartie() {
-        return nomPartie;
-    }
-
-    public void setNomPartie(String nomPartie) {
-        this.nomPartie = nomPartie;
-    }
-
-    public List<Pion> getPions() {
-        return pions;
-    }
-
-    public void setPions(List<Pion> pions) {
-        this.pions = pions;
-    }
-       
     
     public Long getId() {
         return id;
@@ -84,6 +83,10 @@ public class Partie implements Serializable {
         this.id = id;
     }
 
+    public List<Pion> getPions() {
+        return pions;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;

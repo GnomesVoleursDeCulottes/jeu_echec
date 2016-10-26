@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -29,8 +30,12 @@ public class Joueur implements Serializable {
     
     private String mdp;
     
-    private List<Partie> parties = new ArrayList<Partie>();
+    @OneToMany(mappedBy = "blanc")
+    private List<Partie> partiesB = new ArrayList<Partie>();
 
+    @OneToMany(mappedBy = "noir")
+    private List<Partie> partiesN = new ArrayList<Partie>();
+    
     public String getPseudo() {
         return pseudo;
     }
@@ -48,11 +53,11 @@ public class Joueur implements Serializable {
     }
 
     public List<Partie> getParties() {
-        return parties;
+        return partiesB;
     }
 
     public void setParties(List<Partie> parties) {
-        this.parties = parties;
+        this.partiesB = parties;
     }
     
 
