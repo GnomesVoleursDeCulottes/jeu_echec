@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -29,6 +30,8 @@ public class Joueur implements Serializable {
     
     private String mdp;
     
+    
+    @OneToOne(mappedBy = "leJoueur")
     private List<Partie> parties = new ArrayList<Partie>();
 
     public String getPseudo() {
