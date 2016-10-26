@@ -25,8 +25,10 @@ public class Partie implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private String etat;
+    private String nomPartie;
     
+    private String etat;
+
     private String blanc;
     
     private String noir;
@@ -57,7 +59,22 @@ public class Partie implements Serializable {
         this.noir = noir;
     }
 
-    
+    public String getNomPartie() {
+        return nomPartie;
+    }
+
+    public void setNomPartie(String nomPartie) {
+        this.nomPartie = nomPartie;
+    }
+
+    public List<Pion> getPions() {
+        return pions;
+    }
+
+    public void setPions(List<Pion> pions) {
+        this.pions = pions;
+    }
+       
     
     public Long getId() {
         return id;
