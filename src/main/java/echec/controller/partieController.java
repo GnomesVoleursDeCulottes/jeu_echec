@@ -8,6 +8,7 @@ package echec.controller;
 import echec.service.JoueurServiceCrud;
 import echec.service.PartieServiceCrud;
 import echec.service.pionServiceCrud;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,4 +37,15 @@ public class partieController {
         model.addAttribute("listePartie", servicePartie.findAll());
         return "_listePartie.jsp";
     }
+    
+    @RequestMapping(value = "/partieEnCours",method = RequestMethod.GET)
+    public String partieEnCours(Model model, HttpSession s){
+        Long joueur = (long) s.getAttribute("idUser");
+        model.addAttribute("listePartie", servicePartie.findAllbyBlancId(joueur));
+        return "_partieEnCours.jsp";
+    }
+    
+    
+    
+    
 }
