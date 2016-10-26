@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -30,6 +32,12 @@ public class Partie implements Serializable {
     private String blanc;
     
     private String noir;
+    
+    
+    
+    @ManyToOne
+    @JoinColumn(name = "ID_JOUEUR")
+    private Joueur Lejoueur;
     
     private List<Pion> pions = new ArrayList<Pion>();
 
