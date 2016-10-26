@@ -1,8 +1,8 @@
-
-<form:form class="centre" name="formulaire" modelAttribute="JoueurAttr" action="">
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<form:form class="centre" name="formulaire" modelAttribute="JoueurAttr" action="dashboard">
     <div>
         <label for="pseudo" >Pseudo :</label>
-        <form:input id="pseudo" path="login"/>
+        <form:input id="pseudo" path="pseudo"/>
     </div>
     <br/>
     <div>
