@@ -35,6 +35,7 @@ public class Partie implements Serializable {
     private Long id;
     
     private String nomPartie;
+    
     @Enumerated(EnumType.STRING)
     private Etat etat;
 
@@ -49,6 +50,14 @@ public class Partie implements Serializable {
     
     @OneToMany(mappedBy = "partie")
     private List<Pion> pions = new ArrayList<Pion>();
+
+    public String getNomPartie() {
+        return nomPartie;
+    }
+
+    public void setNomPartie(String nomPartie) {
+        this.nomPartie = nomPartie;
+    }
 
     public Etat getEtat() {
         return etat;
