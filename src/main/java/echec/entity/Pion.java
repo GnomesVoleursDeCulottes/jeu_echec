@@ -12,6 +12,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -36,6 +38,18 @@ public class Pion implements Serializable {
     
     private short PositionY;
 
+    @ManyToOne
+    @JoinColumn(name = "ID_PARTIE")
+    private Partie partie;
+
+    public Partie getPartie() {
+        return partie;
+    }
+
+    public void setPartie(Partie partie) {
+        this.partie = partie;
+    }
+    
     public Couleur getCouleur() {
         return couleur;
     }
