@@ -38,11 +38,11 @@ public class PartieController {
         return "parties.jsp";
     }
     
-    @RequestMapping(value = "/partieEnCours",method = RequestMethod.GET)
+    @RequestMapping(value = "/partie_en_cours",method = RequestMethod.GET)
     public String partieEnCours(Model model, HttpSession s){
         Long joueur = (long) s.getAttribute("idUser");
         model.addAttribute("listePartie", servicePartie.findAllByBlancId(joueur));
-        return "_partieEnCours.jsp";
+        return "_PARTIE_EN_COURS.jsp";
     }
     
     
