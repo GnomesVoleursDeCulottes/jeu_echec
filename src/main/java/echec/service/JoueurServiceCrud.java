@@ -16,8 +16,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface JoueurServiceCrud extends CrudRepository<Joueur, Long>{
     
     
-    
-     public Joueur findOneByPseudo(String login);
+     public Joueur findOneByPseudo(String pseudo);
      
       @Override
       public List<Joueur> findAll();
