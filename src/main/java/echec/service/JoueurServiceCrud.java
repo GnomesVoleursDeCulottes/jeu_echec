@@ -22,6 +22,6 @@ public interface JoueurServiceCrud extends CrudRepository<Joueur, Long>{
       @Override
       public List<Joueur> findAll();
     
-    
+     
     
 }
