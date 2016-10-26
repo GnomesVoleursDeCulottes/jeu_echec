@@ -6,6 +6,7 @@
 package echec.service;
 
 import echec.entity.Pion;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -15,7 +16,8 @@ import org.springframework.data.repository.CrudRepository;
 public interface pionServiceCrud extends CrudRepository<Pion, Long>{ 
     
     
+    @Override
+    public List<Pion> findAll();
     
-
     
 }
