@@ -35,13 +35,13 @@ public class partieController {
     @RequestMapping(value = "/listePartie", method = RequestMethod.GET)
     public String listePartie(Model model){
         model.addAttribute("listePartie", servicePartie.findAll());
-        return "_listePartie.jsp";
+        return "parties.jsp";
     }
     
     @RequestMapping(value = "/partieEnCours",method = RequestMethod.GET)
     public String partieEnCours(Model model, HttpSession s){
         Long joueur = (long) s.getAttribute("idUser");
-        model.addAttribute("listePartie", servicePartie.findAllbyBlancId(joueur));
+        model.addAttribute("listePartie", servicePartie.findAllByBlancId(joueur));
         return "_partieEnCours.jsp";
     }
     
