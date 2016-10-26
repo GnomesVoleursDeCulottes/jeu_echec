@@ -19,7 +19,7 @@
         <c:import url="_HEADER.jsp"/>
         
             <div id="corps">
-                <c:import url="_listePartie.jsp"/>
+                <c:import url="_LISTE_PARTIE.jsp"/>
             </div>    
             
         <c:import url="_FOOTER.jsp"/>
