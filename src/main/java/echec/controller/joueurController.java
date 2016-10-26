@@ -39,7 +39,7 @@ public class joueurController {
     @RequestMapping(value = "/dashboard", method = RequestMethod.POST)
     public String ajouterMdp(@ModelAttribute("JoueurAttr") Joueur joueur, HttpSession s) {
 
-        Joueur leJoueur = serviceJoueur.findOneByLogin(joueur.getPseudo());
+        Joueur leJoueur = serviceJoueur.findOneByPseudo(joueur.getPseudo());
         if (leJoueur == null) {
             leJoueur = joueur;
             serviceJoueur.save(leJoueur);

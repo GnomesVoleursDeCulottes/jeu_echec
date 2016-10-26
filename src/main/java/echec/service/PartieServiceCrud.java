@@ -17,6 +17,6 @@ public interface PartieServiceCrud extends CrudRepository<Partie, Long>{
     @Override
     public List<Partie> findAll();
     
-    public List<Partie> findAllByLeJoueurId(long idJoueur);
+    public List<Partie> findAllByBlancId(long idJoueur);
     
 }

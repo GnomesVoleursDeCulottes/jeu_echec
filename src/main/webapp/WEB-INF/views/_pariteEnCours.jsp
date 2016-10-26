@@ -4,14 +4,14 @@
 <table>
     <tr>
         <td>Nom de la partie</td>
-        <td>Nom du joueur adverse</td>
+        <td>Nom du joueur</td>
         <td><!-- Ne rien mettre --></td>
     </tr>
-    <c:forEach var="partieEnCours" items="${listePartieEnCours}">
+    <c:forEach var="partieDispo" items="${listePartie}">
         <tr>
-            <td>${partieEnCours.nomPartie}</td>
-            <td>${partieEnCours.nomJoueur}</td>
-            <td><input value="Reprendre Partie" type="button"/></td>
+            <td>${partieDispo.nomPartie}</td>
+            <td>${partieDispo.nomJoueur}</td>
+            <td><input value="Rejoindre Partie" type="button"/></td>
         </tr>
     </c:forEach>
 </table>
