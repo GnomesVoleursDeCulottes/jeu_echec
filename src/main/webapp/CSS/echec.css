@@ -8,3 +8,6 @@ and open the template in the editor.
     Author     : admin
 */
 
+body{
+    background: url("/echec/IMAGE/chess_fond.jpg");
+}
