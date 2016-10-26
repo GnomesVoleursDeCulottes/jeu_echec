@@ -17,7 +17,7 @@ public interface JoueurServiceCrud extends CrudRepository<Joueur, Long>{
     
     
     
-     public Joueur findOneByLogin(String login);
+     public Joueur findOneByPseudo(String login);
      
       @Override
       public List<Joueur> findAll();
