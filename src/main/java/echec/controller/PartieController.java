@@ -32,7 +32,7 @@ public class PartieController {
     @Autowired
     private PionServiceCrud servicePion;
     
-    @RequestMapping(value = "/listePartie", method = RequestMethod.GET)
+    @RequestMapping(value = "/lister_parties", method = RequestMethod.GET)
     public String listePartie(Model model){
         model.addAttribute("listePartie", servicePartie.findAll());
         return "parties.jsp";
