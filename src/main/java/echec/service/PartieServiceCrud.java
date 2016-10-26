@@ -10,11 +10,13 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- *
- * @author admin
+ * @Nordine
  */
 public interface PartieServiceCrud extends CrudRepository<Partie, Long>{ 
     
+    @Override
     public List<Partie> findAll();
+    
+    public List<Partie> findAllByLeJoueurId(long idJoueur);
     
 }
