@@ -1,5 +1,5 @@
 <h1>${laPartie.nomPartie}</h1>
-<table>
+<table id="plateau">
     <thead>
 
     </thead>

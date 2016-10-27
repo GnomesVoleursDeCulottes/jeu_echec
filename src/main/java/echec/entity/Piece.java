@@ -41,9 +41,9 @@ public class Piece implements Serializable {
     @Enumerated(EnumType.STRING)
     private Couleur couleur;
     
-    private String PositionX;
+    private short positionX;
     
-    private short PositionY;
+    private short positionY;
 
     @ManyToOne
     @JoinColumn(name = "ID_PARTIE")
@@ -73,20 +73,20 @@ public class Piece implements Serializable {
         this.couleur = couleur;
     }
 
-    public String getPositionX() {
-        return PositionX;
+    public short getPositionX() {
+        return positionX;
     }
 
-    public void setPositionX(String PositionX) {
-        this.PositionX = PositionX;
+    public void setPositionX(short PositionX) {
+        this.positionX = PositionX;
     }
 
     public short getPositionY() {
-        return PositionY;
+        return positionY;
     }
 
     public void setPositionY(short PositionY) {
-        this.PositionY = PositionY;
+        this.positionY = PositionY;
     }
     
     

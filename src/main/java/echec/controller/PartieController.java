@@ -6,6 +6,7 @@
 package echec.controller;
 
 import echec.entity.Partie;
+import echec.service.JeuService;
 import echec.service.JoueurServiceCrud;
 import echec.service.PartieServiceCrud;
 import javax.servlet.http.HttpSession;
@@ -34,6 +35,9 @@ public class PartieController {
 
     @Autowired
     private PieceServiceCrud servicePion;
+    
+    @Autowired
+    private JeuService serviceJeu;
 
     //fonction qui affiche la liste de toutes les parties
     @RequestMapping(value = "/lister_parties", method = RequestMethod.GET)
@@ -68,9 +72,10 @@ public class PartieController {
     }
 
     @RequestMapping(value = "partie/{id}", method = RequestMethod.GET)
-    public String afficherPartie(@PathVariable(value = "id") Long partieId, HttpSession s, Model model) {
-        model.addAttribute("laPartie", servicePartie.findOne(partieId));
-
+    public String afficherPartie(@PathVariable(value = "id") Long partieId, HttpSession s, Model model){
+        Partie partie = servicePartie.findOne(partieId);
+        model.addAttribute("laPartie", partie);
+        model.addAttribute("plateau", serviceJeu.plateau(partie));
         return "afficher_partie.jsp";
     }
 
