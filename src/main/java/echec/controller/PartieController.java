@@ -61,7 +61,7 @@ public class PartieController {
     public String creePartie(@ModelAttribute ("PartieAttribut") Partie partie, HttpSession s) {
         Long joueur = (long) s.getAttribute("idUser");
         servicePartie.save(partie);
-        return "redirect:/creer_partie.jsp";
+        return "redirect:/dashboard";
     }
 
 }
