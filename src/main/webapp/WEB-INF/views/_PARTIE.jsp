@@ -1,3 +1,4 @@
+<h1>${laPartie.nomPartie}</h1>
 <table>
     <thead>
 
