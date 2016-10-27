@@ -52,11 +52,11 @@ public class PartieController {
 
     //fonction qui affiche le formulaire de création d'une partie
     @RequestMapping(value = "/cree_partie", method = RequestMethod.GET)
-    public String creePartie(Model model, HttpSession s){
+    public String creePartie(Model model, HttpSession s) {
         model.addAttribute("PartieAttribut", new Partie());
         return "creer_partie.jsp";
     }
-    
+
     //fonction de création d'une partie par validation du formulaire de la page _CREATION_PARTIE.jsps
     @RequestMapping(value = "/cree_partie", method = RequestMethod.POST)
     public String creePartie(@ModelAttribute("PartieAttribut") Partie partie, HttpSession s) {
@@ -68,9 +68,21 @@ public class PartieController {
     }
 
     @RequestMapping(value = "partie/{id}", method = RequestMethod.GET)
-    public String afficherPartie(@PathVariable(value = "id") Long partieId, HttpSession s, Model model){
+    public String afficherPartie(@PathVariable(value = "id") Long partieId, HttpSession s, Model model) {
         model.addAttribute("laPartie", servicePartie.findOne(partieId));
-        
+
         return "afficher_partie.jsp";
+    }
+
+    //fonction qui permet au joueur 2 de rejoindre la partie du joueur 1
+    @RequestMapping(value = "/partie_en_cours/{id}", method = RequestMethod.GET)
+    public String rejoindrePartie(Model model, HttpSession s, @PathVariable(value = "id") Long partieId) {
+        Partie partie = servicePartie.findOne(partieId);
+        Long joueur2 = (long) s.getAttribute("idUser");
+        partie.setNoir(serviceJoueur.findOne(joueur2));
+        partie.setEtat(Partie.Etat.EnCours);
+        // emplacement des pièces a rajouter
+        servicePartie.save(partie);
+        return "partie/"+ partieId;
     }
 }
