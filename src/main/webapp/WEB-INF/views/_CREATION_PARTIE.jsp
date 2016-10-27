@@ -1,8 +1,8 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<form:form class="centre" name="formulaire" modelAttribute="PartieAttribut" action="dashboard">
+<form:form class="centre" name="formulaire" modelAttribute="PartieAttribut">
     <div>
-        <label for="pseudo" >Nom de la partie :</label>
+        <label for="NomPartie" >Nom de la partie : </label>
         <form:input id="NomPartie" path="NomPartie"/>
     </div>
     <br/>
