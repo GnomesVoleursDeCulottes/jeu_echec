@@ -37,7 +37,12 @@ nav a{
 
 /****CORPS****/
 #corps {
-    margin: 100px 0;
+    margin: 100px auto;
+    width: 40%;
+    min-width: 300px;
+    min-height: 200px;
+    background-color: rgba(150,150,150,0.5);
+    padding: 60px 0;
 }
 
 /****FOOTER*****/
