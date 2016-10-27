@@ -15,9 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import echec.service.PionServiceCrud;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import echec.service.PieceServiceCrud;
 
 /**
  *
@@ -33,7 +33,7 @@ public class PartieController {
     private PartieServiceCrud servicePartie;
 
     @Autowired
-    private PionServiceCrud servicePion;
+    private PieceServiceCrud servicePion;
 
     //fonction qui affiche la liste de toutes les parties
     @RequestMapping(value = "/lister_parties", method = RequestMethod.GET)
@@ -66,5 +66,5 @@ public class PartieController {
         servicePartie.save(partie);
         return "redirect:/dashboard";
     }
-
+    
 }
