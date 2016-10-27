@@ -7,11 +7,11 @@
         <td>Nom du joueur</td>
         <td><!-- Ne rien mettre --></td>
     </tr>
-     <c:forEach var="partieEnCours" items="${listePartieEnCours}">
+     <c:forEach var="partieEnCours" items="${listePartie}">
         <tr>
             <td>${partieEnCours.nomPartie}</td>
             <td>${partieEnCours.blanc}</td> 
-            <td><input value="Rejoindre Partie" type="button"/></td>
+            <td><input value="Reprendre Partie" type="button"/></td>
         </tr>
     </c:forEach>
 </table>
