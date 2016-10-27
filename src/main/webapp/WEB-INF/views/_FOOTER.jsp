@@ -1,5 +1,5 @@
 <footer>
-    <h1>Créateur</h1>
+    <h1>Créateurs:</h1>
     <div class="createurs">
         <p>Laurent COLLART</p>
         <p>Julien DUTHOIT</p>

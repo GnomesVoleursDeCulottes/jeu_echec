@@ -1,5 +1,5 @@
-<nav>
-    <a href="">DASHBOARD</a>
-    <a href="">PARTIES</a>
-    <a href="">DECONNECTION</a>
+<nav>    
+    <a href="dashboard">DASHBOARD</a>
+    <a href="lister_parties">PARTIES</a>
+    <a href="/echec/">DECONNECTION</a>
 </nav>
