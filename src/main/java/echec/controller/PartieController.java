@@ -66,5 +66,11 @@ public class PartieController {
         servicePartie.save(partie);
         return "redirect:/dashboard";
     }
-    
+
+    @RequestMapping(value = "partie/{id}", method = RequestMethod.GET)
+    public String afficherPartie(@PathVariable(value = "id") Long partieId, HttpSession s, Model model){
+        model.addAttribute("laPartie", servicePartie.findOne(partieId));
+        
+        return "afficher_partie.jsp";
+    }
 }

@@ -14,6 +14,7 @@
         <title>Echec - template</title>
         <link href="/echec/CSS/echec.css" rel="stylesheet" type="text/css"/>
         <script src="/echec/JS/jquery-3.1.1.js" type="text/javascript"></script>
+        <script src="/echec/JS/jeu.js" type="text/javascript"></script>
     </head>
     <body>
         <c:import url="_HEADER.jsp"/>
