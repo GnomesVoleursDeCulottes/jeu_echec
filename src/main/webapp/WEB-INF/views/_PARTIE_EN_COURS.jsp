@@ -11,7 +11,7 @@
         <tr>
             <td>${partieEnCours.nomPartie}</td>
             <td>${partieEnCours.blanc.pseudo}</td> 
-            <td><input value="Reprendre Partie" type="button"/></td>
+            <td><a href="partie/${partieEnCours.id}"><input value="Reprendre Partie" type="button"/></a></td>
         </tr>
     </c:forEach>
 </table>
