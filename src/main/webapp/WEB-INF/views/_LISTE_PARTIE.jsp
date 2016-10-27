@@ -10,7 +10,7 @@
   <c:forEach var="partieDispo" items="${listePartie}">
         <tr>
             <td>${partieDispo.nomPartie}</td>
-            <td>${partieDispo.blanc}</td>
+            <td>${partieDispo.blanc.pseudo}</td>
             <td><input value="Rejoindre Partie" type="button"/></td>
         </tr>
     </c:forEach>
