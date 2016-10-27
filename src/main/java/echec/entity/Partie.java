@@ -49,7 +49,7 @@ public class Partie implements Serializable {
     
     
     @OneToMany(mappedBy = "partie")
-    private List<Pion> pions = new ArrayList<Pion>();
+    private List<Piece> pions = new ArrayList<Piece>();
 
     public String getNomPartie() {
         return nomPartie;
@@ -92,7 +92,7 @@ public class Partie implements Serializable {
         this.id = id;
     }
 
-    public List<Pion> getPions() {
+    public List<Piece> getPions() {
         return pions;
     }
     
