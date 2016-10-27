@@ -11,17 +11,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Echec - Créer une partie</title>
+        <title>Echec - template</title>
         <link href="/echec/CSS/echec.css" rel="stylesheet" type="text/css"/>
         <script src="/echec/JS/jquery-3.1.1.js" type="text/javascript"></script>
     </head>
     <body>
         <c:import url="_HEADER.jsp"/>
-        
-            <div id="corps">
-                <c:import url="_CREATION_PARTIE.jsp"/>
-            </div>    
-            
+
+        <div id="corps">
+            <c:import url="_PARTIE.jsp"/>
+        </div>    
+
         <c:import url="_FOOTER.jsp"/>
     </body>
 </html>
