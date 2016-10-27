@@ -11,7 +11,7 @@
         <tr>
             <td>${partieDispo.nomPartie}</td>
             <td>${partieDispo.blanc.pseudo}</td>
-            <td><input value="Rejoindre Partie" type="button"/></td>
+            <td><a href="partie_en_cours/${partieEnCours.id}"><input value="Rejoindre Partie" type="button"/></a></td>
         </tr>
     </c:forEach>
 </table>
