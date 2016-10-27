@@ -53,13 +53,16 @@ public class PartieController {
     //fonction qui affiche le formulaire de création d'une partie
     @RequestMapping(value = "/cree_partie", method = RequestMethod.GET)
     public String creePartie(Model model, HttpSession s){
+        model.addAttribute("PartieAttribut", new Partie());
         return "creer_partie.jsp";
     }
     
     //fonction de création d'une partie par validation du formulaire de la page _CREATION_PARTIE.jsps
     @RequestMapping(value = "/cree_partie", method = RequestMethod.POST)
-    public String creePartie(@ModelAttribute ("PartieAttribut") Partie partie, HttpSession s) {
+    public String creePartie(@ModelAttribute("PartieAttribut") Partie partie, HttpSession s) {
         Long joueur = (long) s.getAttribute("idUser");
+        partie.setBlanc(serviceJoueur.findOne(joueur));
+        partie.setEtat(Partie.Etat.Creer);
         servicePartie.save(partie);
         return "redirect:/dashboard";
     }
