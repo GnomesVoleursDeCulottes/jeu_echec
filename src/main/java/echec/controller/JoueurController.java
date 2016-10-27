@@ -55,7 +55,7 @@ public class JoueurController {
 
     }
 
-    //fonction qui envoie sur la page de création de la partie
+    //fonction qui envoie sur le dashboard
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
     public String jeu(Model model, HttpSession s) {
         Long joueur = (Long) s.getAttribute("idUser");
