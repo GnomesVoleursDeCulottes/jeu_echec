@@ -10,7 +10,7 @@
         <form:input id="mdp" path="mdp"/>
     </div>
     <br/>
-    <input type="submit" value="Valider" />
+    <input type="submit" value="Se connecter" />
 </form:form>
 
 
