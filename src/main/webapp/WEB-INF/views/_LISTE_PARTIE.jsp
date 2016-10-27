@@ -11,7 +11,7 @@
         <tr>
             <td>${partieDispo.nomPartie}</td>
             <td>${partieDispo.blanc}</td>
-            <td><input value="Reprendre Partie" type="button"/></td>
+            <td><input value="Rejoindre Partie" type="button"/></td>
         </tr>
     </c:forEach>
 </table>
