@@ -29,6 +29,7 @@ public class JoueurController {
     @Autowired
     private PartieServiceCrud servicePartie;
 
+    //gestion de la deconnection
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String finDeSession(Model model, HttpSession s) {
         if (s != null) {
@@ -38,8 +39,9 @@ public class JoueurController {
         return "login.jsp";
     }
 
+    //création du joueur et connection au dashboard
     @RequestMapping(value = "/dashboard", method = RequestMethod.POST)
-    public String ajouterMdp(@ModelAttribute("JoueurAttr") Joueur joueur, HttpSession s) {
+    public String connection(@ModelAttribute("JoueurAttr") Joueur joueur, HttpSession s) {
 
         Joueur leJoueur = serviceJoueur.findOneByPseudo(joueur.getPseudo());
         if (leJoueur == null) {
@@ -53,6 +55,7 @@ public class JoueurController {
 
     }
 
+    //fonction qui envoie sur la page de création de la partie
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
     public String jeu(Model model, HttpSession s) {
         Long joueur = (Long) s.getAttribute("idUser");
